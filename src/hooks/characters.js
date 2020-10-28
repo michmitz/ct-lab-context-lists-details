@@ -1,0 +1,19 @@
+import { useState, useEffect } from 'react';
+import { getCharacters } from '../services/heyArnold-api';
+
+export const useCharacters = () => {
+  const [loading, setLoading] = useState(true);
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    let mounted = true
+    getCharacters()
+      .then(fetchedCharacters => setCharacters(fetchedCharacters))
+      .finally(() => setLoading(false));
+  }, [])
+
+  return {
+    loading,
+    characters
+  };
+};

@@ -1,5 +1,6 @@
 import React from 'react';
+import CharacterList from './CharacterList/CharacterList'
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return <CharacterList />;
 }

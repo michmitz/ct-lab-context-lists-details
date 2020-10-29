@@ -1,6 +1,17 @@
 import React from 'react';
-import CharacterList from './CharacterList/CharacterList'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import ColorModeContainer from './ColorMode/ColorModeContainer'
 
 export default function App() {
-  return <CharacterList />;
+  return (
+    <Router>
+      <Switch>
+        <Route exact path='/' component={ColorModeContainer} />
+      </Switch>
+    </Router>
+  );
 }

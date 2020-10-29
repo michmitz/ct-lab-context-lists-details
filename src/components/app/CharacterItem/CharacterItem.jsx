@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useColorMode } from '../../../hooks/colormode'
 
 const CharacterItem = ({ name, imageUrl }) => {
-  return <figure>
+  const { colorMode } = useColorMode();
+
+  return <figure className={colorMode}>
     <img src={imageUrl} alt={name} />
     <figcaption>{name}</figcaption>
   </figure>

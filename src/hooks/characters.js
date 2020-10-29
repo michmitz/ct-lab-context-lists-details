@@ -6,7 +6,6 @@ export const useCharacters = () => {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    let mounted = true
     getCharacters()
       .then(fetchedCharacters => setCharacters(fetchedCharacters))
       .finally(() => setLoading(false));

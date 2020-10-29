@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import CharacterList from './CharacterList';
 import { getCharacters } from '../../../services/heyArnold-api';
+import { ColorModeProvider } from '../../../context/ColorModeContext'
 
 jest.mock('../../../services/heyArnold-api.jsx');
 
@@ -12,7 +13,9 @@ describe('CharacterList component', () => {
     ])
     
     render(
+      <ColorModeProvider>
       <CharacterList />
+      </ColorModeProvider> 
     );
 
     screen.getByText('Loading...');
